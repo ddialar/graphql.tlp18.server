@@ -1,19 +1,15 @@
 import 'jest';
 
-// NOTE: We need this modules in order to get reference data.
 import axios                    from 'axios';
 import { serverConf }           from '../../../../src/config';
 
-// NOTE: These modules will be needed in order to test the query.
 import { graphql, GraphQLList } from 'graphql';
 import gqlSchema                from '../../../../src/graphql/schema';
 import DirectorType                from '../../../../src/graphql/models/actor.type';
 import { allDirectors }            from '../../../../src/graphql/queries/directors.queries';
 
-// NOTE: This is the URL to the API where the reference data are persisted.
 const API_REST_URL = `${serverConf.api_rest.url}:${serverConf.api_rest.port}/directors`;
 
-// NOTE: This script is designed in order to avoid unnecessary persisted data into the DD.BB.
 var persistedDirectors;
 
 const getPersistedDirectors = () => {
@@ -24,7 +20,6 @@ const setPersistedDirectors = (persistedDirectorsData) => {
     persistedDirectors = persistedDirectorsData;
 };
 
-// NOTE: We get the reference data in order to be used on the testing suite.
 beforeAll(async (done) => {
     try {
         setPersistedDirectors((await axios.get(API_REST_URL)).data);
@@ -35,12 +30,10 @@ beforeAll(async (done) => {
     }
 });
 
-// NOTE: Default definitions in order to build the query.
 const mockedParentValues = {};
 const mockedArgs = {};
 const mockedContext = {};
 
-// NOTE: We define the valid query that we want to test.
 const getValidQuery = () => {
     return `
         query {
@@ -53,7 +46,6 @@ const getValidQuery = () => {
     `;
 };
 
-// NOTE: This query is wrong defined in order to check that we cannot send any field name.
 const getWrongQuery = () => {
     return `
         query {
@@ -68,50 +60,78 @@ const getWrongQuery = () => {
 describe('[ GraphQL ] - Testing \'Director\' queries ...', () => {
     describe('Testing \'allDirectors\' ...', () => {
         describe('Working directly with the \'resolve\' method ...', () => {
-            // TODO: Define the parent values for the query.
-            // TODO: Define the AST structure.
-            // TODO: Define the arguments provided to the query.
-            // TODO: Define the context of the GraphQL API.
+            const parentValues = mockedParentValues;
+            const astData = {
+                fieldName: 'allDirectors',
+                returnType: new GraphQLList(DirectorType),
+                path: { key: 'allDirectors' },
+                schema: gqlSchema
+            };
+            let args = mockedArgs;
+            let context = mockedContext;
 
             test('this test must return all persisted directors.', async (done) => {
-                // TODO: Define what results we expect to receive.
-                // TODO: Run the reolve function and store its result into a variable.
+                let expectedResult = getPersistedDirectors();
+                let obtainedResult = await allDirectors.resolve(parentValues, args, context, astData);
                 
-                // TODO: Check that the obtained result contains the same amount of results that we expect.
+                expect(obtainedResult).toHaveLength(expectedResult.length);
 
-                // TODO: Check that all obtained results match with the expected ones.
+                expectedResult.map(expectedDirector => {
+                    let obtainedDirector = obtainedResult.filter(actor => actor.id === expectedDirector.id)[0];
+
+                    expect(obtainedDirector).not.toBeNull();
+                    expect(obtainedDirector).toMatchObject(expectedDirector);
+                });
 
                 done();
             });
         });
         
         describe('Working with the \'graphql\' method ...', () => {
-            // TODO: Define the parent values for the query.
-            // TODO: Define the context of the GraphQL API.
-            // TODO: Define the variables for the query. It will be equal NULL.
+            const parentValues = mockedParentValues;
+            const context = mockedContext;
+            const variables = null;
 
             test('with a valid query, it must be returned all persisted directors.', async (done) => {
-                // TODO: Get the query to be run.
-                // TODO: Obtain the expected result.
-                // TODO: Run the query and store the result into a variable.
+                let query = getValidQuery();
+                let expectedResult = getPersistedDirectors();
+                let obtainedResult = await graphql(gqlSchema, query, parentValues, context, variables);
 
-                // TODO: Check that the obtained result is not null nor undefined.
-                // TODO: Check that obtained data is not null nor undefined.
-                // TODO: Check that query result is not null nor undefined and in addition, it contains the expected amount of data.
+                expect(obtainedResult).not.toBeNull();
+                expect(obtainedResult).not.toBeUndefined();
+                expect(obtainedResult.data).not.toBeNull();
+                expect(obtainedResult.data).not.toBeUndefined();
+                expect(obtainedResult.data.allDirectors).not.toBeNull();
+                expect(obtainedResult.data.allDirectors).not.toBeUndefined();
+                expect(obtainedResult.data.allDirectors).toHaveLength(expectedResult.length);
 
-                // TODO: Check that the whole obtained data match with the expected ones.
+                expectedResult.map(expectedDirector => {
+                    let obtainedDirector = obtainedResult.data.allDirectors.filter(actor => actor.id === expectedDirector.id)[0];
+
+                    expect(obtainedDirector).not.toBeNull();
+
+                    // expect(obtainedDirector).toMatchObject(expectedDirector); It doesn't work 'cos GQL returns fields moved.
+
+                    expect(obtainedDirector.name).toBe(expectedDirector.name);
+                    expect(obtainedDirector.picture).toBe(expectedDirector.picture);
+                });
 
                 done();
             });
             test('with a wrong query, it must be returned an error.', async (done) => {
-                // TODO: Get the query to be run.
-                // TODO: Define the error message that it's expected.
-                // TODO: Run the query and store the result into a variable.
+                let query = getWrongQuery();
+                let expectedErrorMessage = 'Cannot query field \"testingWrongField\" on type \"Director\".';
+                let obtainedResult = await graphql(gqlSchema, query, parentValues, context, variables);
 
-                // TODO: Check that the obtained result is not null nor undefined.
-                // TODO: Check that we have not received the 'data' field.
-                // TODO: Check that the 'errors' field is defined and have a length of one element.
-                // TODO: Check that the error message is defined and it maches with the expected one.
+                expect(obtainedResult).not.toBeNull();
+                expect(obtainedResult).not.toBeUndefined();
+                expect(obtainedResult.data).toBeUndefined();
+                expect(obtainedResult.errors).not.toBeNull();
+                expect(obtainedResult.errors).not.toBeUndefined();
+                expect(obtainedResult.errors.length).toBeGreaterThanOrEqual(1);
+                expect(obtainedResult.errors[0].message).not.toBeNull();
+                expect(obtainedResult.errors[0].message).not.toBeUndefined();
+                expect(obtainedResult.errors[0].message).toBe(expectedErrorMessage);
 
                 done();
             });
