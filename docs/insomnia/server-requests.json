@@ -1,0 +1,595 @@
+{
+	"_type": "export",
+	"__export_format": 3,
+	"__export_date": "2018-07-15T22:41:04.500Z",
+	"__export_source": "insomnia.desktop.app:v5.16.6",
+	"resources": [
+		{
+			"_id": "wrk_35bd106c500a4e4680b7e16c9610ed05",
+			"created": 1531562386491,
+			"description": "",
+			"modified": 1531562386491,
+			"name": "TLP2018",
+			"parentId": null,
+			"_type": "workspace"
+		},
+		{
+			"_id": "env_8f9f9767f01640c3847bb244ef7940f6",
+			"color": null,
+			"created": 1531562386525,
+			"data": {},
+			"isPrivate": false,
+			"modified": 1531562386525,
+			"name": "New Environment",
+			"parentId": "wrk_35bd106c500a4e4680b7e16c9610ed05",
+			"_type": "environment"
+		},
+		{
+			"_id": "jar_553e66769369494cb4536c4a8fa92bf4",
+			"cookies": [],
+			"created": 1531562386528,
+			"modified": 1531562386528,
+			"name": "Default Jar",
+			"parentId": "wrk_35bd106c500a4e4680b7e16c9610ed05",
+			"_type": "cookie_jar"
+		},
+		{
+			"_id": "fld_152a187dd3044bdaa942fe9d3a597cd8",
+			"created": 1531562548296,
+			"description": "",
+			"environment": {},
+			"metaSortKey": -1531562548297,
+			"modified": 1531562548296,
+			"name": "Actors",
+			"parentId": "wrk_35bd106c500a4e4680b7e16c9610ed05",
+			"_type": "request_group"
+		},
+		{
+			"_id": "fld_fc08a3a5bc124a54b6b73723de8567cb",
+			"created": 1531640138648,
+			"description": "",
+			"environment": {},
+			"metaSortKey": -1529668835861,
+			"modified": 1531640153033,
+			"name": "Directors",
+			"parentId": "wrk_35bd106c500a4e4680b7e16c9610ed05",
+			"_type": "request_group"
+		},
+		{
+			"_id": "env_5b0a907cc14a404795545c5c2abf08bb",
+			"color": "#e9ff00",
+			"created": 1531562426415,
+			"data": {
+				"port": 4000,
+				"url": "http://localhost"
+			},
+			"isPrivate": false,
+			"modified": 1531562518088,
+			"name": "Testing",
+			"parentId": "env_8f9f9767f01640c3847bb244ef7940f6",
+			"_type": "environment"
+		},
+		{
+			"_id": "fld_5cfde5b42fd74f9987a4a3060584c317",
+			"created": 1531639324792,
+			"description": "",
+			"environment": {},
+			"metaSortKey": -1531639462498,
+			"modified": 1531639491492,
+			"name": "Read",
+			"parentId": "fld_152a187dd3044bdaa942fe9d3a597cd8",
+			"_type": "request_group"
+		},
+		{
+			"_id": "fld_55c1bff32cb44f46b84e16b23a943b9f",
+			"created": 1531639394760,
+			"description": "",
+			"environment": {},
+			"metaSortKey": -1531639462548,
+			"modified": 1531639494556,
+			"name": "Create",
+			"parentId": "fld_152a187dd3044bdaa942fe9d3a597cd8",
+			"_type": "request_group"
+		},
+		{
+			"_id": "fld_a4c494b1d561410b8e51fd0b2d3760c9",
+			"created": 1531639453000,
+			"description": "",
+			"environment": {},
+			"metaSortKey": -1531639462448,
+			"modified": 1531639487645,
+			"name": "Update",
+			"parentId": "fld_152a187dd3044bdaa942fe9d3a597cd8",
+			"_type": "request_group"
+		},
+		{
+			"_id": "fld_221e615d513d4eb895c2e2a4d51aad23",
+			"created": 1531639462248,
+			"description": "",
+			"environment": {},
+			"metaSortKey": -1531639462398,
+			"modified": 1531639484141,
+			"name": "Delete",
+			"parentId": "fld_152a187dd3044bdaa942fe9d3a597cd8",
+			"_type": "request_group"
+		},
+		{
+			"_id": "fld_fde8c7c327ba404b8c060937b35997f4",
+			"created": 1531640138652,
+			"description": "",
+			"environment": {},
+			"metaSortKey": -1531639462498,
+			"modified": 1531640138652,
+			"name": "Read",
+			"parentId": "fld_fc08a3a5bc124a54b6b73723de8567cb",
+			"_type": "request_group"
+		},
+		{
+			"_id": "fld_dc31acbac2b14342babfc546c5e39eea",
+			"created": 1531640138671,
+			"description": "",
+			"environment": {},
+			"metaSortKey": -1531639462548,
+			"modified": 1531640138671,
+			"name": "Create",
+			"parentId": "fld_fc08a3a5bc124a54b6b73723de8567cb",
+			"_type": "request_group"
+		},
+		{
+			"_id": "fld_6ec6747d3ce54e7fa93eb1da28740d89",
+			"created": 1531640138684,
+			"description": "",
+			"environment": {},
+			"metaSortKey": -1531639462448,
+			"modified": 1531640138684,
+			"name": "Update",
+			"parentId": "fld_fc08a3a5bc124a54b6b73723de8567cb",
+			"_type": "request_group"
+		},
+		{
+			"_id": "fld_c981eb25cfe749bda01603bb6d8899eb",
+			"created": 1531640138707,
+			"description": "",
+			"environment": {},
+			"metaSortKey": -1531639462398,
+			"modified": 1531640138707,
+			"name": "Delete",
+			"parentId": "fld_fc08a3a5bc124a54b6b73723de8567cb",
+			"_type": "request_group"
+		},
+		{
+			"_id": "req_d9fa7d0cb54a4e52825c61868bde25f6",
+			"authentication": {},
+			"body": {
+				"mimeType": "application/graphql",
+				"text": "{\"query\":\"query {\\n  allActors {\\n    id\\n    name\\n    picture\\n    height\\n    country\\n  }\\n}\"}"
+			},
+			"created": 1531562563600,
+			"description": "",
+			"headers": [
+				{
+					"id": "pair_518b93f2a7384db6b0026120cb6363ad",
+					"name": "Content-Type",
+					"value": "application/json"
+				}
+			],
+			"isPrivate": false,
+			"metaSortKey": -1531562563600,
+			"method": "POST",
+			"modified": 1531639348175,
+			"name": "All actors",
+			"parameters": [],
+			"parentId": "fld_5cfde5b42fd74f9987a4a3060584c317",
+			"settingDisableRenderRequestBody": false,
+			"settingEncodeUrl": true,
+			"settingRebuildPath": true,
+			"settingSendCookies": true,
+			"settingStoreCookies": true,
+			"url": "{{ url }}:{{ port  }}/graphql",
+			"_type": "request"
+		},
+		{
+			"_id": "req_b51b0a2f50774780a53abbb8a0f811a2",
+			"authentication": {},
+			"body": {
+				"mimeType": "application/graphql",
+				"text": "{\"query\":\"query ($id: [Int!]) {\\n  actorsById(id: $id) {\\n    name\\n    movies {\\n      title\\n      description\\n      poster_image\\n      duration\\n      rating\\n      classification\\n      year\\n      actors {\\n        name\\n      }\\n      genres {\\n        name\\n      }\\n    }\\n  }\\n}\",\"variables\":{\"id\":[1,2]}}"
+			},
+			"created": 1531565795828,
+			"description": "",
+			"headers": [
+				{
+					"id": "pair_518b93f2a7384db6b0026120cb6363ad",
+					"name": "Content-Type",
+					"value": "application/json"
+				}
+			],
+			"isPrivate": false,
+			"metaSortKey": -1531562563650,
+			"method": "POST",
+			"modified": 1531639783044,
+			"name": "By ID",
+			"parameters": [],
+			"parentId": "fld_5cfde5b42fd74f9987a4a3060584c317",
+			"settingDisableRenderRequestBody": false,
+			"settingEncodeUrl": true,
+			"settingRebuildPath": true,
+			"settingSendCookies": true,
+			"settingStoreCookies": true,
+			"url": "{{ url }}:{{ port  }}/graphql",
+			"_type": "request"
+		},
+		{
+			"_id": "req_f1c4acc8e7e948ff9279a1b0d6092e90",
+			"authentication": {},
+			"body": {
+				"mimeType": "application/graphql",
+				"text": "{\"query\":\"mutation {\\n  createActor (\\n    name: \\\"Testing Actor\\\"\\n    picture:\\\"testing_actor_picture.jpg\\\"\\n    born:\\\"1969-01-01\\\"\\n    height:1.90\\n    country:\\\"USA\\\"\\n  ) {\\n    id\\n    name\\n    picture\\n    born\\n    height\\n    country\\n  }\\n}\"}"
+			},
+			"created": 1531565926054,
+			"description": "",
+			"headers": [
+				{
+					"id": "pair_518b93f2a7384db6b0026120cb6363ad",
+					"name": "Content-Type",
+					"value": "application/json"
+				}
+			],
+			"isPrivate": false,
+			"metaSortKey": -1528008973060,
+			"method": "POST",
+			"modified": 1531639418559,
+			"name": "New actor",
+			"parameters": [],
+			"parentId": "fld_55c1bff32cb44f46b84e16b23a943b9f",
+			"settingDisableRenderRequestBody": false,
+			"settingEncodeUrl": true,
+			"settingRebuildPath": true,
+			"settingSendCookies": true,
+			"settingStoreCookies": true,
+			"url": "{{ url }}:{{ port  }}/graphql",
+			"_type": "request"
+		},
+		{
+			"_id": "req_4dc387e3217045789fdb1fd3fa6e55c6",
+			"authentication": {},
+			"body": {
+				"mimeType": "application/graphql",
+				"text": "{\"query\":\"mutation {\\n  updateActor(id: 29, name: \\\"Pepito\\\") {\\n    id\\n    name\\n  }\\n}\"}"
+			},
+			"created": 1531639947201,
+			"description": "",
+			"headers": [
+				{
+					"id": "pair_417b128f692b4120834fc8a0d44784f4",
+					"name": "Content-Type",
+					"value": "application/json"
+				}
+			],
+			"isPrivate": false,
+			"metaSortKey": -1531639947201,
+			"method": "POST",
+			"modified": 1531639966031,
+			"name": "By ID",
+			"parameters": [],
+			"parentId": "fld_a4c494b1d561410b8e51fd0b2d3760c9",
+			"settingDisableRenderRequestBody": false,
+			"settingEncodeUrl": true,
+			"settingRebuildPath": true,
+			"settingSendCookies": true,
+			"settingStoreCookies": true,
+			"url": "{{ url  }}:{{ port  }}/graphql",
+			"_type": "request"
+		},
+		{
+			"_id": "req_86eeb0ab844a436899d17c6f4907ac4e",
+			"authentication": {},
+			"body": {
+				"mimeType": "application/graphql",
+				"text": "{\"query\":\"mutation {\\n  addMoviesToActor(id: 29, movies: [2, 3, 4]) {\\n    id\\n    name\\n    movies {\\n      id\\n      title\\n    }\\n  }\\n}\"}"
+			},
+			"created": 1531640007391,
+			"description": "",
+			"headers": [
+				{
+					"id": "pair_417b128f692b4120834fc8a0d44784f4",
+					"name": "Content-Type",
+					"value": "application/json"
+				}
+			],
+			"isPrivate": false,
+			"metaSortKey": -1531639766033,
+			"method": "POST",
+			"modified": 1531640015224,
+			"name": "Add movies",
+			"parameters": [],
+			"parentId": "fld_a4c494b1d561410b8e51fd0b2d3760c9",
+			"settingDisableRenderRequestBody": false,
+			"settingEncodeUrl": true,
+			"settingRebuildPath": true,
+			"settingSendCookies": true,
+			"settingStoreCookies": true,
+			"url": "{{ url  }}:{{ port  }}/graphql",
+			"_type": "request"
+		},
+		{
+			"_id": "req_07702e568dbd41d8917fa7f4c59a5b55",
+			"authentication": {},
+			"body": {
+				"mimeType": "application/graphql",
+				"text": "{\"query\":\"mutation {\\n  deleteActorMovies(id: 29, movies: [3, 4]) {\\n    id\\n    name\\n    movies {\\n      id\\n      title\\n    }\\n  }\\n}\"}"
+			},
+			"created": 1531640033554,
+			"description": "",
+			"headers": [
+				{
+					"id": "pair_417b128f692b4120834fc8a0d44784f4",
+					"name": "Content-Type",
+					"value": "application/json"
+				}
+			],
+			"isPrivate": false,
+			"metaSortKey": -1531639675449,
+			"method": "POST",
+			"modified": 1531640042003,
+			"name": "Delete movies",
+			"parameters": [],
+			"parentId": "fld_a4c494b1d561410b8e51fd0b2d3760c9",
+			"settingDisableRenderRequestBody": false,
+			"settingEncodeUrl": true,
+			"settingRebuildPath": true,
+			"settingSendCookies": true,
+			"settingStoreCookies": true,
+			"url": "{{ url  }}:{{ port  }}/graphql",
+			"_type": "request"
+		},
+		{
+			"_id": "req_e253072f3c7f473583b9279cfae77d92",
+			"authentication": {},
+			"body": {
+				"mimeType": "application/graphql",
+				"text": "{\"query\":\"mutation ($id: Int!) {\\n  deleteActor(id: $id) {\\n    id\\n    name\\n    picture\\n  }\\n}\",\"variables\":{\"id\":30}}"
+			},
+			"created": 1531639584865,
+			"description": "",
+			"headers": [
+				{
+					"id": "pair_c2d7760019304fbb9a4f4601c70cec3d",
+					"name": "Content-Type",
+					"value": "application/json"
+				}
+			],
+			"isPrivate": false,
+			"metaSortKey": -1531639584865,
+			"method": "POST",
+			"modified": 1531639704092,
+			"name": "By ID",
+			"parameters": [],
+			"parentId": "fld_221e615d513d4eb895c2e2a4d51aad23",
+			"settingDisableRenderRequestBody": false,
+			"settingEncodeUrl": true,
+			"settingRebuildPath": true,
+			"settingSendCookies": true,
+			"settingStoreCookies": true,
+			"url": "{{ url  }}:{{ port  }}/graphql",
+			"_type": "request"
+		},
+		{
+			"_id": "req_e061dab91b234557a6f12eb53ca03b21",
+			"authentication": {},
+			"body": {
+				"mimeType": "application/graphql",
+				"text": "{\"query\":\"query {\\n  allDirectors {\\n    id\\n    name\\n    picture\\n  }\\n}\"}"
+			},
+			"created": 1531640138655,
+			"description": "",
+			"headers": [
+				{
+					"id": "pair_518b93f2a7384db6b0026120cb6363ad",
+					"name": "Content-Type",
+					"value": "application/json"
+				}
+			],
+			"isPrivate": false,
+			"metaSortKey": -1531562563600,
+			"method": "POST",
+			"modified": 1531640277089,
+			"name": "All actors",
+			"parameters": [],
+			"parentId": "fld_fde8c7c327ba404b8c060937b35997f4",
+			"settingDisableRenderRequestBody": false,
+			"settingEncodeUrl": true,
+			"settingRebuildPath": true,
+			"settingSendCookies": true,
+			"settingStoreCookies": true,
+			"url": "{{ url }}:{{ port  }}/graphql",
+			"_type": "request"
+		},
+		{
+			"_id": "req_78a257f71d9a4b94b8a9059c2e4fca11",
+			"authentication": {},
+			"body": {
+				"mimeType": "application/graphql",
+				"text": "{\"query\":\"query ($id: [Int!]) {\\n  directorsById(id: $id) {\\n    name\\n    movies {\\n      title\\n      description\\n      poster_image\\n      duration\\n      rating\\n      classification\\n      year\\n      actors {\\n        name\\n      }\\n      genres {\\n        name\\n      }\\n    }\\n  }\\n}\",\"variables\":{\"id\":[1,2]}}"
+			},
+			"created": 1531640138660,
+			"description": "",
+			"headers": [
+				{
+					"id": "pair_518b93f2a7384db6b0026120cb6363ad",
+					"name": "Content-Type",
+					"value": "application/json"
+				}
+			],
+			"isPrivate": false,
+			"metaSortKey": -1531562563650,
+			"method": "POST",
+			"modified": 1531640258595,
+			"name": "By ID",
+			"parameters": [],
+			"parentId": "fld_fde8c7c327ba404b8c060937b35997f4",
+			"settingDisableRenderRequestBody": false,
+			"settingEncodeUrl": true,
+			"settingRebuildPath": true,
+			"settingSendCookies": true,
+			"settingStoreCookies": true,
+			"url": "{{ url }}:{{ port  }}/graphql",
+			"_type": "request"
+		},
+		{
+			"_id": "req_bd221c76725a4752b5254b5c34602fc7",
+			"authentication": {},
+			"body": {
+				"mimeType": "application/graphql",
+				"text": "{\"query\":\"mutation {\\n  createDirector(\\n    name: \\\"Testing Director\\\"\\n    picture:\\\"testing_director_picture.jpg\\\"\\n    movies: [1,2,3]) {\\n    id\\n    name\\n    picture\\n    movies {\\n      id\\n      title\\n    }\\n  }\\n}\"}"
+			},
+			"created": 1531640138673,
+			"description": "",
+			"headers": [
+				{
+					"id": "pair_518b93f2a7384db6b0026120cb6363ad",
+					"name": "Content-Type",
+					"value": "application/json"
+				}
+			],
+			"isPrivate": false,
+			"metaSortKey": -1528008973060,
+			"method": "POST",
+			"modified": 1531640186188,
+			"name": "New director",
+			"parameters": [],
+			"parentId": "fld_dc31acbac2b14342babfc546c5e39eea",
+			"settingDisableRenderRequestBody": false,
+			"settingEncodeUrl": true,
+			"settingRebuildPath": true,
+			"settingSendCookies": true,
+			"settingStoreCookies": true,
+			"url": "{{ url }}:{{ port  }}/graphql",
+			"_type": "request"
+		},
+		{
+			"_id": "req_c1d06276acb74e5988abf9158f9dbb90",
+			"authentication": {},
+			"body": {
+				"mimeType": "application/graphql",
+				"text": "{\"query\":\"mutation {\\n  updateDirector(id: 29, name: \\\"Pepito\\\") {\\n    id\\n    name\\n\\t\\tmovies {\\n\\t\\t\\tid\\n\\t\\t\\ttitle\\n\\t\\t}\\n  }\\n}\"}"
+			},
+			"created": 1531640138686,
+			"description": "",
+			"headers": [
+				{
+					"id": "pair_417b128f692b4120834fc8a0d44784f4",
+					"name": "Content-Type",
+					"value": "application/json"
+				}
+			],
+			"isPrivate": false,
+			"metaSortKey": -1531639947201,
+			"method": "POST",
+			"modified": 1531640315167,
+			"name": "By ID",
+			"parameters": [],
+			"parentId": "fld_6ec6747d3ce54e7fa93eb1da28740d89",
+			"settingDisableRenderRequestBody": false,
+			"settingEncodeUrl": true,
+			"settingRebuildPath": true,
+			"settingSendCookies": true,
+			"settingStoreCookies": true,
+			"url": "{{ url  }}:{{ port  }}/graphql",
+			"_type": "request"
+		},
+		{
+			"_id": "req_2c0ade834c2b4481b209914b7edfa491",
+			"authentication": {},
+			"body": {
+				"mimeType": "application/graphql",
+				"text": "{\"query\":\"mutation {\\n  addMoviesToDirector(id: 7, movies: [2, 3, 4]) {\\n    id\\n    name\\n    movies {\\n      id\\n      title\\n    }\\n  }\\n}\"}"
+			},
+			"created": 1531640138690,
+			"description": "",
+			"headers": [
+				{
+					"id": "pair_417b128f692b4120834fc8a0d44784f4",
+					"name": "Content-Type",
+					"value": "application/json"
+				}
+			],
+			"isPrivate": false,
+			"metaSortKey": -1531639766033,
+			"method": "POST",
+			"modified": 1531640340121,
+			"name": "Add movies",
+			"parameters": [],
+			"parentId": "fld_6ec6747d3ce54e7fa93eb1da28740d89",
+			"settingDisableRenderRequestBody": false,
+			"settingEncodeUrl": true,
+			"settingRebuildPath": true,
+			"settingSendCookies": true,
+			"settingStoreCookies": true,
+			"url": "{{ url  }}:{{ port  }}/graphql",
+			"_type": "request"
+		},
+		{
+			"_id": "req_909cfd55873944b99933e70d2ea45752",
+			"authentication": {},
+			"body": {
+				"mimeType": "application/graphql",
+				"text": "{\"query\":\"mutation {\\n  deleteDirectorMovies(id: 7, movies: [3, 4]) {\\n    id\\n    name\\n    movies {\\n      id\\n      title\\n    }\\n  }\\n}\"}"
+			},
+			"created": 1531640138697,
+			"description": "",
+			"headers": [
+				{
+					"id": "pair_417b128f692b4120834fc8a0d44784f4",
+					"name": "Content-Type",
+					"value": "application/json"
+				}
+			],
+			"isPrivate": false,
+			"metaSortKey": -1531639675449,
+			"method": "POST",
+			"modified": 1531640357191,
+			"name": "Delete movies",
+			"parameters": [],
+			"parentId": "fld_6ec6747d3ce54e7fa93eb1da28740d89",
+			"settingDisableRenderRequestBody": false,
+			"settingEncodeUrl": true,
+			"settingRebuildPath": true,
+			"settingSendCookies": true,
+			"settingStoreCookies": true,
+			"url": "{{ url  }}:{{ port  }}/graphql",
+			"_type": "request"
+		},
+		{
+			"_id": "req_36abfea6da6c444fb196d4c0a7e016a0",
+			"authentication": {},
+			"body": {
+				"mimeType": "application/graphql",
+				"text": "{\"query\":\"mutation ($id: Int!) {\\n  deleteDirector(id: $id) {\\n    id\\n    name\\n    picture\\n  }\\n}\",\"variables\":{\"id\":30}}"
+			},
+			"created": 1531640138709,
+			"description": "",
+			"headers": [
+				{
+					"id": "pair_c2d7760019304fbb9a4f4601c70cec3d",
+					"name": "Content-Type",
+					"value": "application/json"
+				}
+			],
+			"isPrivate": false,
+			"metaSortKey": -1531639584865,
+			"method": "POST",
+			"modified": 1531640372206,
+			"name": "By ID",
+			"parameters": [],
+			"parentId": "fld_c981eb25cfe749bda01603bb6d8899eb",
+			"settingDisableRenderRequestBody": false,
+			"settingEncodeUrl": true,
+			"settingRebuildPath": true,
+			"settingSendCookies": true,
+			"settingStoreCookies": true,
+			"url": "{{ url  }}:{{ port  }}/graphql",
+			"_type": "request"
+		}
+	]
+}
