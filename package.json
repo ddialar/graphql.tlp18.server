@@ -4,7 +4,8 @@
   "description": "Código fuente empleado durante el taller impartido en la TLP Innova 2018, que aborda cómo llevar a cabo tests unitarios y de integración sobre una API basada en GraphQL.",
   "main": "server.js",
   "scripts": {
-    "test": "jest --runInBand --watch --verbose"
+    "test": "jest --runInBand --watch",
+    "dev": "nodemon --watch src --exec babel-node src/server.js"
   },
   "repository": {
     "type": "git",
@@ -22,18 +23,27 @@
     "url": "https://github.com/ddialar/graphql.tlp18.server/issues"
   },
   "homepage": "https://github.com/ddialar/graphql.tlp18.server#readme",
+  "jest": {
+    "testPathIgnorePatterns": [
+      "./node_modules"
+    ],
+    "testMatch": [
+      "**/tests/**/*(*.)(spec|test).js?(x)"
+    ]
+  },
   "devDependencies": {
     "babel-cli": "^6.26.0",
     "babel-jest": "^22.4.3",
-    "babel-preset-es2015": "^6.24.1",
+    "babel-preset-env": "^1.6.1",
     "eslint": "^4.19.1",
     "jest": "^22.4.3",
     "nodemon": "^1.17.4"
   },
   "dependencies": {
+    "axios": "^0.18.0",
     "express": "^4.16.3",
     "express-graphql": "^0.6.12",
     "graphql": "^0.13.2",
-    "log4js": "^2.5.3"
+    "log4js": "^3.0.0"
   }
 }
