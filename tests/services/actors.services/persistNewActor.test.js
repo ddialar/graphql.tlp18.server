@@ -1,3 +1,5 @@
+import 'jest';
+
 import axios               from 'axios';
 import { serverConf }      from '../../../src/config';
 import { persistNewActor } from '../../../src/services/actors.service';
@@ -36,230 +38,141 @@ afterEach(async (done) => {
 
 describe('[ Services ] - Testing \'Actors\' services ...', () => {
     describe('Testing \'persistNewActor\' ...', () => {
-        test.skip('with \'actorData\' set to null, it must return an empty object only with \'id\' field.', async (done) => {
-            // Basic operations.
-            // TODO: Declare the 'actorData' variable and set it to null.
-            // let actorData = null;
-            // TODO: Declare the 'obtainedResult' variable.
-            // TODO: Obtain the result of running the 'persistNewActor' method and store it into the 'obtainedResult' variable (Warning: This method is asyncronous).
-            // let obtainedResult = await persistNewActor(actorData);
+        test('with \'actorData\' set to null, it must return an empty object only with \'id\' field.', async (done) => {
+            let actorData = null;
+            let obtainedResult = await persistNewActor(actorData);
 
-            // Testing operations.
-            // TODO: Check that the obtained result is not NULL.
-            // expect(obtainedResult).not.toBeNull();
-            // TODO: Check that the obtained result is not UNDEFINED.
-            // expect(obtainedResult).not.toBeUndefined();
-            // TODO: Check that the obtained result contains a field named 'id'.
-            // expect(Object.keys(obtainedResult).includes('id')).toBeTruthy();
-            // TODO: Check that the field 'id' is not NULL.
-            // expect(obtainedResult.id).not.toBeNull();
-            // TODO: Check that the field 'id' is not UNDEFINED.
-            // expect(obtainedResult.id).not.toBeUndefined();
-            // TODO: Check that the field 'id' is greater thant zero.
-            // expect(obtainedResult.id).toBeGreaterThan(0);
-
-            // Final opreations.
-            // TODO: User the 'setPersistedActor' and provide it the obtained result, in order to be
-            //       remove from the DD.BB.
-            // setPersistedActor(obtainedResult);
-            // TODO: Remove the '.skip' parameter from the testing case.
-            // TODO: Check the testing console if the test is in green.
+            expect(obtainedResult).not.toBeNull();
+            expect(obtainedResult).not.toBeUndefined();
+            expect(Object.keys(obtainedResult).includes('id')).toBeTruthy();
+            expect(obtainedResult.id).not.toBeNull();
+            expect(obtainedResult.id).not.toBeUndefined();
+            expect(obtainedResult.id).toBeGreaterThan(0);
+            
+            setPersistedActor(obtainedResult);
             
             done();
         });
-        test.skip('with \'actorData.name\' set to null, the actor must be created with this field to null.', async (done) => {
-            // Basic operations.
-            // TODO: Declare the 'actorData' variable and populate it with the 'testingActorMockedData' content (Warning: Don't assign the mocked data directly).
-            // let actorData = JSON.parse(JSON.stringify(testingActorMockedData));
-            // TODO: Set to null the 'name' field, into the 'actorData' variable.
-            // actorData.name = null;
-            // TODO: Declare the 'obtainedResult' variable.
-            // TODO: Obtain the result of running the 'persistNewActor' method and store it into the 'obtainedResult' variable (Warning: This method is asyncronous).
-            // let obtainedResult = await persistNewActor(actorData);
+        test('with \'actorData.name\' set to null, the actor must be created with this field to null.', async (done) => {
+            let actorData = JSON.parse(JSON.stringify(testingActorMockedData));
+            actorData.name = null;
+            let obtainedResult = await persistNewActor(actorData);
 
-            // Testing operations.
-            // TODO: Check that the obtained result is not NULL.
-            // expect(obtainedResult).not.toBeNull();
-            // TODO: Check that the obtained result is not UNDEFINED.
-            // expect(obtainedResult).not.toBeUndefined();
-            // TODO: Check that the obtained result contains a field named 'id'.
-            // expect(obtainedResult.id).not.toBeNull();
-            // TODO: Check that the field 'id' is not NULL.
-            // expect(obtainedResult.id).not.toBeUndefined();
-            // TODO: Check that the field 'id' is not UNDEFINED.
-            // expect(obtainedResult.id).toBeGreaterThan(0);
-            // TODO: Check that the field 'id' is greater thant zero.
-            // expect(obtainedResult.name).toBeNull();
-            // TODO: Check that the field 'name' is NULL.
-            // TODO: Check that the field 'picture' is the same that the mocked data field.
-            // expect(obtainedResult.picture).toBe(testingActorMockedData.picture);
-            // TODO: Check that the field 'born' is the same that the mocked data field.
-            // expect(obtainedResult.born).toBe(testingActorMockedData.born);
-            // TODO: Check that the field 'height' is the same that the mocked data field.
-            // expect(obtainedResult.height).toBe(testingActorMockedData.height);
-            // TODO: Check that the field 'country' is the same that the mocked data field.
-            // expect(obtainedResult.country).toBe(testingActorMockedData.country);
+            expect(obtainedResult).not.toBeNull();
+            expect(obtainedResult).not.toBeUndefined();
+            expect(obtainedResult.id).not.toBeNull();
+            expect(obtainedResult.id).not.toBeUndefined();
+            expect(obtainedResult.id).toBeGreaterThan(0);
+            expect(obtainedResult.name).toBeNull();
+            expect(obtainedResult.picture).toBe(testingActorMockedData.picture);
+            expect(obtainedResult.born).toBe(testingActorMockedData.born);
+            expect(obtainedResult.height).toBe(testingActorMockedData.height);
+            expect(obtainedResult.country).toBe(testingActorMockedData.country);
             
-            // Final opreations.
-            // TODO: User the 'setPersistedActor' and provide it the obtained result, in order to be
-            //       remove from the DD.BB.
-            // setPersistedActor(obtainedResult);
-            // TODO: Remove the '.skip' parameter from the testing case.
-            // TODO: Check the testing console if the test is in green.
+            setPersistedActor(obtainedResult);
             
             done();
         });
-        test.skip('with \'actorData.picture\' set to null, the actor must be created with this field to null.', async (done) => {
-            // Basic operations.
-            // TODO: Declare the 'actorData' variable and populate it with the 'testingActorMockedData' content (Warning: Don't assign the mocked data directly).
-            // let actorData = JSON.parse(JSON.stringify(testingActorMockedData));
-            // TODO: Set to null the 'picture' field, into the 'actorData' variable.
-            // actorData.picture = null;
-            // TODO: Declare the 'obtainedResult' variable.
-            // TODO: Obtain the result of running the 'persistNewActor' method and store it into the 'obtainedResult' variable (Warning: This method is asyncronous).
-            // let obtainedResult = await persistNewActor(actorData);
+        test('with \'actorData.picture\' set to null, the actor must be created with this field to null.', async (done) => {
+            let actorData = JSON.parse(JSON.stringify(testingActorMockedData));
+            actorData.picture = null;
+            let obtainedResult = await persistNewActor(actorData);
 
-            // Testing operations.
-            // TODO: Check that the obtained result is not NULL.
-            // expect(obtainedResult).not.toBeNull();
-            // TODO: Check that the obtained result is not UNDEFINED.
-            // expect(obtainedResult).not.toBeUndefined();
-            // TODO: Check that the obtained result contains a field named 'id'.
-            // expect(obtainedResult.id).not.toBeNull();
-            // TODO: Check that the field 'id' is not NULL.
-            // expect(obtainedResult.id).not.toBeUndefined();
-            // TODO: Check that the field 'id' is not UNDEFINED.
-            // expect(obtainedResult.id).toBeGreaterThan(0);
-            // TODO: Check that the field 'id' is greater thant zero.
-            // expect(obtainedResult.name).toBe(testingActorMockedData.name);
-            // TODO: Check that the field 'name' is the same that the mocked data field.
-            // expect(obtainedResult.picture).toBeNull();
-            // TODO: Check that the field 'picture' is NULL.
-            // expect(obtainedResult.picture).not.toBeUndefined();
-            // TODO: Check that the field 'born' is the same that the mocked data field.
-            // expect(obtainedResult.born).toBe(testingActorMockedData.born);
-            // TODO: Check that the field 'height' is the same that the mocked data field.
-            // expect(obtainedResult.height).toBe(testingActorMockedData.height);
-            // TODO: Check that the field 'country' is the same that the mocked data field.
-            // expect(obtainedResult.country).toBe(testingActorMockedData.country);
-
-            // Final opreations.
-            // TODO: User the 'setPersistedActor' and provide it the obtained result, in order to be
-            //       remove from the DD.BB.
-            // setPersistedActor(obtainedResult);
-            // TODO: Remove the '.skip' parameter from the testing case.
-            // TODO: Check the testing console if the test is in green.
-
-            done();
-        });
-        test.skip('with \'actorData.born\' set to null, the actor must be created with this field to null.', async (done) => {
-            // Basic operations.
-            // TODO: Declare the 'actorData' variable and populate it with the 'testingActorMockedData' content (Warning: Don't assign the mocked data directly).
-            // TODO: Set to null the 'born' field, into the 'actorData' variable.
-            // TODO: Declare the 'obtainedResult' variable.
-            // TODO: Obtain the result of running the 'persistNewActor' method and store it into the 'obtainedResult' variable (Warning: This method is asyncronous).
-
-            // Testing operations.
-            // TODO: Check that the obtained result is not NULL.
-            // TODO: Check that the obtained result is not UNDEFINED.
-            // TODO: Check that the obtained result contains a field named 'id'.
-            // TODO: Check that the field 'id' is not NULL.
-            // TODO: Check that the field 'id' is not UNDEFINED.
-            // TODO: Check that the field 'id' is greater thant zero.
-            // TODO: Check that the field 'name' is the same that the mocked data field.
-            // TODO: Check that the field 'picture' is the same that the mocked data field.
-            // TODO: Check that the field 'born' is NULL.
-            // TODO: Check that the field 'height' is the same that the mocked data field.
-            // TODO: Check that the field 'country' is the same that the mocked data field.
-
-            // Final opreations.
-            // TODO: User the 'setPersistedActor' and provide it the obtained result, in order to be
-            //       remove from the DD.BB.
-            // TODO: Remove the '.skip' parameter from the testing case.
-            // TODO: Check the testing console if the test is in green.
+            expect(obtainedResult).not.toBeNull();
+            expect(obtainedResult).not.toBeUndefined();
+            expect(obtainedResult.id).not.toBeNull();
+            expect(obtainedResult.id).not.toBeUndefined();
+            expect(obtainedResult.id).toBeGreaterThan(0);
+            expect(obtainedResult.name).toBe(testingActorMockedData.name);
+            expect(obtainedResult.picture).toBeNull();
+            expect(obtainedResult.picture).not.toBeUndefined();
+            expect(obtainedResult.born).toBe(testingActorMockedData.born);
+            expect(obtainedResult.height).toBe(testingActorMockedData.height);
+            expect(obtainedResult.country).toBe(testingActorMockedData.country);
+            
+            setPersistedActor(obtainedResult);
             
             done();
         });
-        test.skip('with \'actorData.height\' set to null, the actor must be created with this field to null.', async (done) => {
-            // Basic operations.
-            // TODO: Declare the 'actorData' variable and populate it with the 'testingActorMockedData' content (Warning: Don't assign the mocked data directly).
-            // TODO: Set to null the 'height' field, into the 'actorData' variable.
-            // TODO: Declare the 'obtainedResult' variable.
-            // TODO: Obtain the result of running the 'persistNewActor' method and store it into the 'obtainedResult' variable (Warning: This method is asyncronous).
+        test('with \'actorData.born\' set to null, the actor must be created with this field to null.', async (done) => {
+            let actorData = JSON.parse(JSON.stringify(testingActorMockedData));
+            actorData.born = null;
+            let obtainedResult = await persistNewActor(actorData);
 
-            // Testing operations.
-            // TODO: Check that the obtained result is not NULL.
-            // TODO: Check that the obtained result is not UNDEFINED.
-            // TODO: Check that the obtained result contains a field named 'id'.
-            // TODO: Check that the field 'id' is not NULL.
-            // TODO: Check that the field 'id' is not UNDEFINED.
-            // TODO: Check that the field 'id' is greater thant zero.
-            // TODO: Check that the field 'name' is the same that the mocked data field.
-            // TODO: Check that the field 'picture' is the same that the mocked data field.
-            // TODO: Check that the field 'born' is the same that the mocked data field.
-            // TODO: Check that the field 'height' is NULL.
-            // TODO: Check that the field 'country' is the same that the mocked data field.
-
-            // Final opreations.
-            // TODO: User the 'setPersistedActor' and provide it the obtained result, in order to be
-            //       remove from the DD.BB.
-            // TODO: Remove the '.skip' parameter from the testing case.
-            // TODO: Check the testing console if the test is in green.
+            expect(obtainedResult).not.toBeNull();
+            expect(obtainedResult).not.toBeUndefined();
+            expect(obtainedResult.id).not.toBeNull();
+            expect(obtainedResult.id).not.toBeUndefined();
+            expect(obtainedResult.id).toBeGreaterThan(0);
+            expect(obtainedResult.name).toBe(testingActorMockedData.name);
+            expect(obtainedResult.picture).toBe(testingActorMockedData.picture);
+            expect(obtainedResult.born).toBeNull();
+            expect(obtainedResult.born).not.toBeUndefined();
+            expect(obtainedResult.height).toBe(testingActorMockedData.height);
+            expect(obtainedResult.country).toBe(testingActorMockedData.country);
+            
+            setPersistedActor(obtainedResult);
             
             done();
         });
-        test.skip('with \'actorData.country\' set to null, the actor must be created with this field to null.', async (done) => {
-            // Basic operations.
-            // TODO: Declare the 'actorData' variable and populate it with the 'testingActorMockedData' content (Warning: Don't assign the mocked data directly).
-            // TODO: Set to null the 'country' field, into the 'actorData' variable.
-            // TODO: Declare the 'obtainedResult' variable.
-            // TODO: Obtain the result of running the 'persistNewActor' method and store it into the 'obtainedResult' variable (Warning: This method is asyncronous).
+        test('with \'actorData.height\' set to null, the actor must be created with this field to null.', async (done) => {
+            let actorData = JSON.parse(JSON.stringify(testingActorMockedData));
+            actorData.height = null;
+            let obtainedResult = await persistNewActor(actorData);
 
-            // Testing operations.
-            // TODO: Check that the obtained result is not NULL.
-            // TODO: Check that the obtained result is not UNDEFINED.
-            // TODO: Check that the obtained result contains a field named 'id'.
-            // TODO: Check that the field 'id' is not NULL.
-            // TODO: Check that the field 'id' is not UNDEFINED.
-            // TODO: Check that the field 'id' is greater thant zero.
-            // TODO: Check that the field 'name' is the same that the mocked data field.
-            // TODO: Check that the field 'picture' is the same that the mocked data field.
-            // TODO: Check that the field 'born' is the same that the mocked data field.
-            // TODO: Check that the field 'height' is the same that the mocked data field.
-            // TODO: Check that the field 'country' is NULL.
-
-            // Final opreations.
-            // TODO: User the 'setPersistedActor' and provide it the obtained result, in order to be
-            //       remove from the DD.BB.
-            // TODO: Remove the '.skip' parameter from the testing case.
-            // TODO: Check the testing console if the test is in green.
+            expect(obtainedResult).not.toBeNull();
+            expect(obtainedResult).not.toBeUndefined();
+            expect(obtainedResult.id).not.toBeNull();
+            expect(obtainedResult.id).not.toBeUndefined();
+            expect(obtainedResult.id).toBeGreaterThan(0);
+            expect(obtainedResult.name).toBe(testingActorMockedData.name);
+            expect(obtainedResult.picture).toBe(testingActorMockedData.picture);
+            expect(obtainedResult.born).toBe(testingActorMockedData.born);
+            expect(obtainedResult.height).toBeNull();
+            expect(obtainedResult.height).not.toBeUndefined();
+            expect(obtainedResult.country).toBe(testingActorMockedData.country);
+            
+            setPersistedActor(obtainedResult);
             
             done();
         });
-        test.skip('with \'actorData\' set to full payload, the actor must be created with all its fields filled up.', async (done) => {
-            // Basic operations.
-            // TODO: Declare the 'actorData' variable and populate it with the 'testingActorMockedData' content (Warning: Don't assign the mocked data directly).
-            // TODO: Declare the 'obtainedResult' variable.
-            // TODO: Obtain the result of running the 'persistNewActor' method and store it into the 'obtainedResult' variable (Warning: This method is asyncronous).
+        test('with \'actorData.country\' set to null, the actor must be created with this field to null.', async (done) => {
+            let actorData = JSON.parse(JSON.stringify(testingActorMockedData));
+            actorData.country = null;
+            let obtainedResult = await persistNewActor(actorData);
 
-            // Testing operations.
-            // TODO: Check that the obtained result is not NULL.
-            // TODO: Check that the obtained result is not UNDEFINED.
-            // TODO: Check that the obtained result contains a field named 'id'.
-            // TODO: Check that the field 'id' is not NULL.
-            // TODO: Check that the field 'id' is not UNDEFINED.
-            // TODO: Check that the field 'id' is greater thant zero.
-            // TODO: Check that the field 'name' is the same that the mocked data field.
-            // TODO: Check that the field 'picture' is the same that the mocked data field.
-            // TODO: Check that the field 'born' is the same that the mocked data field.
-            // TODO: Check that the field 'height' is the same that the mocked data field.
-            // TODO: Check that the field 'country' is the same that the mocked data field.
+            expect(obtainedResult).not.toBeNull();
+            expect(obtainedResult).not.toBeUndefined();
+            expect(obtainedResult.id).not.toBeNull();
+            expect(obtainedResult.id).not.toBeUndefined();
+            expect(obtainedResult.id).toBeGreaterThan(0);
+            expect(obtainedResult.name).toBe(testingActorMockedData.name);
+            expect(obtainedResult.picture).toBe(testingActorMockedData.picture);
+            expect(obtainedResult.born).toBe(testingActorMockedData.born);
+            expect(obtainedResult.height).toBe(testingActorMockedData.height);
+            expect(obtainedResult.country).toBeNull();
+            expect(obtainedResult.country).not.toBeUndefined();
+            
+            setPersistedActor(obtainedResult);
+            
+            done();
+        });
+        test('with \'actorData.country\' set to full payload, the actor must be created with all its fields filled up.', async (done) => {
+            let actorData = JSON.parse(JSON.stringify(testingActorMockedData));
+            let obtainedResult = await persistNewActor(actorData);
 
-            // Final opreations.
-            // TODO: User the 'setPersistedActor' and provide it the obtained result, in order to be
-            //       remove from the DD.BB.
-            // TODO: Remove the '.skip' parameter from the testing case.
-            // TODO: Check the testing console if the test is in green.
+            expect(obtainedResult).not.toBeNull();
+            expect(obtainedResult).not.toBeUndefined();
+            expect(obtainedResult.id).not.toBeNull();
+            expect(obtainedResult.id).not.toBeUndefined();
+            expect(obtainedResult.id).toBeGreaterThan(0);
+            expect(obtainedResult.name).toBe(testingActorMockedData.name);
+            expect(obtainedResult.picture).toBe(testingActorMockedData.picture);
+            expect(obtainedResult.born).toBe(testingActorMockedData.born);
+            expect(obtainedResult.height).toBe(testingActorMockedData.height);
+            expect(obtainedResult.country).toBe(testingActorMockedData.country);
+            
+            setPersistedActor(obtainedResult);
             
             done();
         });
