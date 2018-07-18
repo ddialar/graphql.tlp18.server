@@ -1,0 +1,31 @@
+import {
+    GraphQLObjectType,
+    GraphQLInt,
+    GraphQLFloat,
+    GraphQLString,
+    GraphQLList
+} from 'graphql';
+
+import * as MoviesActorsService from '../../services/movies-actors.service';
+
+const ActorType = new GraphQLObjectType({
+    name: 'Actor',
+    fields: () => ({
+        id: { type: GraphQLInt },
+        name: { type: GraphQLString },
+        picture: { type: GraphQLString },
+        born: { type: GraphQLString },
+        height: { type: GraphQLFloat },
+        country: { type: GraphQLString },
+        movies: {
+            type: new GraphQLList(MovieType),
+            resolve: async (parentValues, args) => {
+                return await MoviesActorsService.getMoviesDataByActorId(parentValues.id);
+            }
+        }
+    })
+});
+
+export default ActorType;
+
+import MovieType from './movie.type';
